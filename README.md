@@ -31,7 +31,7 @@ docs/scoring.md         how ranking works and why
 
 ```bash
 cd backend
-pip install -e ".[dev]"
+pip install -r requirements.txt
 pytest                          # 32 tests, including determinism and persona checks
 python -m app.catalog           # validate the course data
 python -m app.calibrate --all   # agreement with persona expectations under every preset
