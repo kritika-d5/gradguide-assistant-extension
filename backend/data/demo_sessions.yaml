@@ -1,0 +1,85 @@
+# ILLUSTRATIVE past sessions, used only to demonstrate the consistency lens.
+#
+# These are invented, not real students or real counsellors. They are loaded into the session
+# history once, when it is empty, and are always flagged as demo data in the panel. Turn this off
+# with GG_SEED_DEMO=0. Real sessions are added from the panel with "Save session".
+#
+# Each session stores only confirmed profile values and the courses the counsellor recommended.
+
+sessions:
+  # ---- Data science, mid budget, Germany or Canada: most counsellors agree ----
+  - counsellor: Counsellor A
+    as_of: 2026-08-04
+    preset: balanced
+    profile: {gpa_percent: 76, background_tags: [computer_science, engineering], interest_tags: [data_science], career_tags: [data_scientist], budget_inr: 4000000, target_countries: [germany, canada], target_levels: [masters]}
+    recommended: [de_dortmund_msc_ds, de_srh_msc_bdai, ca_ubc_mds]
+
+  - counsellor: Counsellor B
+    as_of: 2026-08-11
+    preset: balanced
+    profile: {gpa_percent: 78, background_tags: [computer_science], interest_tags: [data_science, ml], career_tags: [data_scientist], budget_inr: 4500000, target_countries: [germany], target_levels: [masters]}
+    recommended: [de_dortmund_msc_ds, de_tum_msc_dea, de_srh_msc_bdai]
+
+  - counsellor: Counsellor C
+    as_of: 2026-08-19
+    preset: budget_first
+    profile: {gpa_percent: 74, background_tags: [information_technology], interest_tags: [data_science], career_tags: [data_analyst], budget_inr: 3500000, target_countries: [germany, uk], target_levels: [masters]}
+    recommended: [de_dortmund_msc_ds, uk_coventry_msc_dsci, de_srh_msc_bdai]
+
+  - counsellor: Counsellor A
+    as_of: 2026-08-26
+    preset: career_first
+    profile: {gpa_percent: 80, background_tags: [computer_science], interest_tags: [data_science], career_tags: [data_scientist], budget_inr: 4200000, target_countries: [canada, germany], target_levels: [masters]}
+    recommended: [de_dortmund_msc_ds, ca_ubc_mds, de_tum_msc_dea]
+
+  - counsellor: Counsellor B
+    as_of: 2026-09-02
+    preset: budget_first
+    profile: {gpa_percent: 72, background_tags: [statistics], interest_tags: [data_science, statistics], career_tags: [data_analyst], budget_inr: 3000000, target_countries: [germany], target_levels: [masters]}
+    recommended: [de_dortmund_msc_ds, de_srh_msc_bdai]
+
+  # The outlier: a similar student steered to cheaper UK and college options.
+  - counsellor: Counsellor C
+    as_of: 2026-09-09
+    preset: budget_first
+    profile: {gpa_percent: 77, background_tags: [computer_science], interest_tags: [data_science], career_tags: [data_scientist], budget_inr: 4000000, target_countries: [uk, canada], target_levels: [masters, pg_diploma]}
+    recommended: [uk_coventry_msc_dsci, uk_herts_msc_ba, ca_conestoga_gc_aiml]
+
+  # ---- Business analytics, lower budget ----
+  - counsellor: Counsellor B
+    as_of: 2026-08-14
+    preset: budget_first
+    profile: {gpa_percent: 62, background_tags: [mathematics], interest_tags: [business_analytics], career_tags: [business_analyst], budget_inr: 2500000, target_countries: [uk, canada], target_levels: [masters, pg_diploma]}
+    recommended: [uk_herts_msc_ba, ca_humber_gc_bia]
+
+  - counsellor: Counsellor A
+    as_of: 2026-09-05
+    preset: balanced
+    profile: {gpa_percent: 65, background_tags: [mathematics], interest_tags: [business_analytics, management], career_tags: [business_analyst], budget_inr: 3000000, target_countries: [uk], target_levels: [masters]}
+    recommended: [uk_herts_msc_ba, uk_leeds_msc_intl_business]
+
+  # ---- Robotics, mechanical background ----
+  - counsellor: Counsellor C
+    as_of: 2026-08-21
+    preset: budget_first
+    profile: {gpa_percent: 78, background_tags: [mechanical, engineering], interest_tags: [robotics], career_tags: [robotics_engineer], budget_inr: 3000000, target_countries: [germany], target_levels: [masters]}
+    recommended: [de_rwth_msc_robotics]
+
+  - counsellor: Counsellor B
+    as_of: 2026-09-12
+    preset: balanced
+    profile: {gpa_percent: 81, background_tags: [mechanical, engineering], interest_tags: [robotics, mechanical], career_tags: [robotics_engineer], budget_inr: 6000000, target_countries: [uk, germany], target_levels: [masters]}
+    recommended: [de_rwth_msc_robotics, uk_manchester_msc_robotics]
+
+  # ---- Strong ML students, high budget ----
+  - counsellor: Counsellor A
+    as_of: 2026-08-28
+    preset: prestige_first
+    profile: {gpa_percent: 90, background_tags: [computer_science], interest_tags: [ml], career_tags: [ml_engineer], budget_inr: 8000000, target_countries: [canada, uk], target_levels: [masters]}
+    recommended: [ca_toronto_mscac, uk_ucl_msc_dsml, ca_waterloo_meng_ece]
+
+  - counsellor: Counsellor C
+    as_of: 2026-09-15
+    preset: prestige_first
+    profile: {gpa_percent: 88, background_tags: [computer_science], interest_tags: [ml, data_science], career_tags: [ml_engineer], budget_inr: 7500000, target_countries: [uk, canada], target_levels: [masters]}
+    recommended: [uk_ucl_msc_dsml, ca_toronto_mscac, de_tum_msc_dea]

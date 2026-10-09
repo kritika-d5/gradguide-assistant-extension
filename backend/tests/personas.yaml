@@ -140,3 +140,18 @@ personas:
     expect:
       max_confidence: 0.5
       not_ranked: []
+
+  - name: Rules out the UK and US, budget is the top priority (from a test call)
+    preset: budget_first
+    profile:
+      gpa_percent: 76
+      degree_years: 4
+      backlogs: 0
+      background_tags: [mechanical, engineering]
+      interest_tags: [data_science]
+      career_tags: [data_scientist]
+      budget_inr: 15000000
+      excluded_countries: [uk, usa]
+    expect:
+      set_aside: {uk_ucl_msc_dsml: country, uk_manchester_msc_acs: country}
+      top_n_country_includes: {n: 5, country: canada}

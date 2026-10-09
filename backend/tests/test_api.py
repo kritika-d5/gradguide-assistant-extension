@@ -44,3 +44,12 @@ def test_course_search():
 
 def test_course_detail_404():
     assert client.get("/courses/nope").status_code == 404
+
+
+def test_vocabulary_comes_from_catalogue():
+    v = client.get("/vocabulary").json()
+    assert "data_science" in v["interest_tags"]
+    assert "ml_engineer" in v["career_tags"]
+    assert "computer_science" in v["background_tags"]
+    assert v["countries"] == sorted(v["countries"]) and "canada" in v["countries"]
+    assert {"term": "sep", "year": 2027} in v["intakes"]

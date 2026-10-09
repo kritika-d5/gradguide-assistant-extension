@@ -143,6 +143,8 @@ class StudentProfile(BaseModel):
     career_tags: ProfileField[list[str]] = ProfileField()
     budget_inr: ProfileField[float] = ProfileField()
     target_countries: ProfileField[list[str]] = ProfileField()
+    # Countries the student refuses (safety, family, visa worries). A gate, not a weight.
+    excluded_countries: ProfileField[list[str]] = ProfileField()
     target_intake: ProfileField[TargetIntake] = ProfileField()
     target_levels: ProfileField[list[Literal["masters", "pg_diploma", "bachelors"]]] = ProfileField()
 

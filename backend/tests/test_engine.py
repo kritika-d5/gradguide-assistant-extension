@@ -101,6 +101,16 @@ def test_soft_rule_failure_stays_ranked_with_warning(catalog):
     assert any("Lowest IELTS band" in x.text and x.kind == "warning" for x in ucl.reasons)
 
 
+def test_ruled_out_country_is_a_gate(catalog):
+    rec = recommend(catalog, strong_student(excluded_countries=["uk"], target_countries=["uk", "canada"]), "balanced", AS_OF)
+    assert aside(rec)["uk_ucl_msc_dsml"].gate == "country"
+    assert not any(r.country == "uk" for r in rec.ranked)
+    # A value heard in captions but not confirmed changes nothing.
+    heard = {"value": ["uk"], "status": "pending", "source": "caption"}
+    rec = recommend(catalog, strong_student(excluded_countries=heard, target_countries=["uk", "canada"]), "balanced", AS_OF)
+    assert not [s for s in rec.set_aside if s.gate == "country"]
+
+
 def test_level_gate(catalog):
     rec = recommend(catalog, strong_student(), "balanced", AS_OF)
     assert aside(rec)["ca_conestoga_gc_aiml"].gate == "level"

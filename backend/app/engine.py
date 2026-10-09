@@ -18,6 +18,7 @@ from .models import Catalog, Course, Intake, StudentProfile
 from .taxonomy import tag_similarity
 
 REPUTATION = {"top100": 1.0, "top300": 0.75, "other": 0.5}
+COUNTRY_LABELS = {"uk": "the UK", "usa": "the USA"}
 FULL_WORK_RIGHTS_MONTHS = 36
 DEADLINE_WARNING_DAYS = 30
 
@@ -80,7 +81,7 @@ class SetAsideCourse(BaseModel):
     course_name: str
     university: str
     country: str
-    gate: Literal["eligibility", "level", "budget", "intake"]
+    gate: Literal["eligibility", "country", "level", "budget", "intake"]
     reasons: list[str]
 
 
@@ -386,6 +387,10 @@ def recommend(
 
         if elig.hard_failures:
             aside("eligibility", [r.message for r in elig.hard_failures])
+            continue
+        excluded = profile.confirmed("excluded_countries")
+        if excluded is not None and uni.country in excluded:
+            aside("country", [f"The student ruled out {COUNTRY_LABELS.get(uni.country, uni.country.title())}"])
             continue
         levels = profile.confirmed("target_levels")
         if levels is not None and course.degree_level not in levels:

@@ -47,6 +47,7 @@ a gate, and courses that fail a gate are listed separately with the reason.
 | Gate | Fails when |
 |---|---|
 | Eligibility | a hard rule fails |
+| Ruled out country | the course is in a country the student has refused (for example "not the UK or the US, because of the conflicts"). A preference for a country is a weight (`preference_fit`); a refusal is a dealbreaker, so it is a gate |
 | Budget ceiling | total cost exceeds budget × (1 + stretch). Stretch defaults to 0 and is set by the counsellor |
 | Intake | the target intake is not offered, or its deadline is before `as_of` |
 
