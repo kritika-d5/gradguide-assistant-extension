@@ -8,8 +8,8 @@ so the counsellor can recommend consistently without breaking eye contact with t
 It assists and never replaces: the student never sees it, nothing is applied without the
 counsellor's confirmation, and every recommendation carries its reason.
 
-> 🎥 **Video walkthrough:** _link to be added_
-> <!-- Replace with the walkthrough link, e.g. [Watch the walkthrough](https://...) -->
+> 🎥 **Video walkthrough:** 
+> ([Watch the walkthrough](https://drive.google.com/file/d/1JzHHtBwBXQRocntNa9jcEt3TaeFlnJ_3/view?usp=sharing))
 
 
 ---
