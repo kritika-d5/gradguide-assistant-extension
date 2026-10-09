@@ -1,0 +1,336 @@
+# Course catalogue. ILLUSTRATIVE VALUES: see the note in reference.yaml.
+#
+# Eligibility rules are data. Supported types: min_gpa_percent, min_ielts_overall, min_ielts_band,
+# accepts_3yr_degree, max_backlogs, required_background, min_work_exp_months.
+# severity: hard (sets the course aside) or soft (ranked with a warning). Default is hard.
+
+_cs_bg: &cs_bg [computer_science, information_technology, engineering, mathematics, statistics]
+_eng_bg: &eng_bg [engineering, mechanical, electrical, electronics, computer_science]
+
+courses:
+  # ---------------- United Kingdom ----------------
+  - id: uk_ucl_msc_dsml
+    university_id: uk_ucl
+    name: MSc Data Science and Machine Learning
+    degree_level: masters
+    field_tags: [data_science, ml, computer_science]
+    career_tags: [data_scientist, ml_engineer]
+    duration_months: 12
+    tuition_total: 41000
+    currency: GBP
+    typical_admit_gpa_percent: 85
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-03-31, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 75}
+      - {type: min_ielts_overall, value: 7.0}
+      - {type: min_ielts_band, value: 6.5, severity: soft}
+      - {type: required_background, value: *cs_bg}
+
+  - id: uk_manchester_msc_acs
+    university_id: uk_manchester
+    name: MSc Advanced Computer Science
+    degree_level: masters
+    field_tags: [computer_science, software, ml]
+    career_tags: [software_engineer, ml_engineer]
+    duration_months: 12
+    tuition_total: 35000
+    currency: GBP
+    typical_admit_gpa_percent: 78
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-06-30, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 65}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: *cs_bg}
+
+  - id: uk_manchester_msc_robotics
+    university_id: uk_manchester
+    name: MSc Robotics
+    degree_level: masters
+    field_tags: [robotics, mechanical, electrical]
+    career_tags: [robotics_engineer, mechanical_engineer]
+    duration_months: 12
+    tuition_total: 35000
+    currency: GBP
+    typical_admit_gpa_percent: 75
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-06-30, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 65}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: *eng_bg}
+
+  - id: uk_leeds_msc_ds
+    university_id: uk_leeds
+    name: MSc Data Science
+    degree_level: masters
+    field_tags: [data_science, statistics]
+    career_tags: [data_scientist, data_analyst]
+    duration_months: 12
+    tuition_total: 32000
+    currency: GBP
+    typical_admit_gpa_percent: 72
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-07-31, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 60}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: *cs_bg}
+
+  - id: uk_leeds_msc_intl_business
+    university_id: uk_leeds
+    name: MSc International Business
+    degree_level: masters
+    field_tags: [management, business_analytics]
+    career_tags: [business_analyst, product_manager]
+    duration_months: 12
+    tuition_total: 31000
+    currency: GBP
+    typical_admit_gpa_percent: 62
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-07-31, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 55}
+      - {type: min_ielts_overall, value: 6.5}
+
+  - id: uk_glasgow_msc_cyber
+    university_id: uk_glasgow
+    name: MSc Cyber Security
+    degree_level: masters
+    field_tags: [cybersecurity, computer_science]
+    career_tags: [security_analyst, software_engineer]
+    duration_months: 12
+    tuition_total: 33000
+    currency: GBP
+    typical_admit_gpa_percent: 72
+    intakes:
+      - {term: jan, year: 2027, application_deadline: 2026-10-31, status: open}
+      - {term: sep, year: 2027, application_deadline: 2027-06-30, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 60}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: *cs_bg}
+
+  - id: uk_coventry_msc_dsci
+    university_id: uk_coventry
+    name: MSc Data Science and Computational Intelligence
+    degree_level: masters
+    field_tags: [data_science, ml, computer_science]
+    career_tags: [data_scientist, data_analyst]
+    duration_months: 12
+    tuition_total: 20000
+    currency: GBP
+    typical_admit_gpa_percent: 60
+    intakes:
+      - {term: jan, year: 2027, application_deadline: 2026-11-30, status: open}
+      - {term: may, year: 2027, application_deadline: 2027-03-31, status: open}
+      - {term: sep, year: 2027, application_deadline: 2027-07-31, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 55}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: max_backlogs, value: 10, severity: soft}
+
+  - id: uk_herts_msc_ba
+    university_id: uk_herts
+    name: MSc Business Analytics
+    degree_level: masters
+    field_tags: [business_analytics, data_science]
+    career_tags: [business_analyst, data_analyst]
+    duration_months: 12
+    tuition_total: 17500
+    currency: GBP
+    typical_admit_gpa_percent: 55
+    intakes:
+      - {term: jan, year: 2027, application_deadline: 2026-11-15, status: open}
+      - {term: sep, year: 2027, application_deadline: 2027-07-31, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 50}
+      - {type: min_ielts_overall, value: 6.5}
+
+  # ---------------- Canada ----------------
+  - id: ca_toronto_mscac
+    university_id: ca_toronto
+    name: MSc Applied Computing (AI concentration)
+    degree_level: masters
+    field_tags: [computer_science, ml, data_science]
+    career_tags: [ml_engineer, software_engineer, data_scientist]
+    duration_months: 16
+    tuition_total: 75000
+    currency: CAD
+    typical_admit_gpa_percent: 88
+    intakes: [{term: sep, year: 2027, application_deadline: 2026-12-01, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 78}
+      - {type: min_ielts_overall, value: 7.0}
+      - {type: min_ielts_band, value: 6.5}
+      - {type: required_background, value: [computer_science, mathematics, statistics]}
+
+  - id: ca_ubc_mds
+    university_id: ca_ubc
+    name: Master of Data Science
+    degree_level: masters
+    field_tags: [data_science, statistics, ml]
+    career_tags: [data_scientist, data_analyst]
+    duration_months: 10
+    tuition_total: 54000
+    currency: CAD
+    typical_admit_gpa_percent: 82
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-01-15, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 76}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: min_ielts_band, value: 6.0}
+
+  - id: ca_waterloo_meng_ece
+    university_id: ca_waterloo
+    name: MEng Electrical and Computer Engineering
+    degree_level: masters
+    field_tags: [computer_science, electrical, software]
+    career_tags: [software_engineer, ml_engineer]
+    duration_months: 16
+    tuition_total: 60000
+    currency: CAD
+    typical_admit_gpa_percent: 80
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-02-01, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 75}
+      - {type: min_ielts_overall, value: 7.0}
+      - {type: required_background, value: *eng_bg}
+
+  - id: ca_concordia_meng_soft
+    university_id: ca_concordia
+    name: MEng Software Engineering
+    degree_level: masters
+    field_tags: [software, computer_science]
+    career_tags: [software_engineer]
+    duration_months: 16
+    tuition_total: 40000
+    currency: CAD
+    typical_admit_gpa_percent: 70
+    intakes:
+      - {term: jan, year: 2027, application_deadline: 2026-08-01, status: closed}
+      - {term: sep, year: 2027, application_deadline: 2027-03-01, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 65}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: *cs_bg}
+
+  - id: ca_conestoga_gc_aiml
+    university_id: ca_conestoga
+    name: Graduate Certificate in Applied AI and Machine Learning
+    degree_level: pg_diploma
+    field_tags: [ml, data_science]
+    career_tags: [ml_engineer, data_analyst]
+    duration_months: 12
+    tuition_total: 17000
+    currency: CAD
+    typical_admit_gpa_percent: 60
+    post_study_work_months: 12
+    intakes:
+      - {term: jan, year: 2027, application_deadline: 2026-10-15, status: open}
+      - {term: may, year: 2027, application_deadline: 2027-02-15, status: open}
+      - {term: sep, year: 2027, application_deadline: 2027-06-15, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 55}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: min_ielts_band, value: 6.0}
+
+  - id: ca_humber_gc_bia
+    university_id: ca_humber
+    name: Graduate Certificate in Business Insights and Analytics
+    degree_level: pg_diploma
+    field_tags: [business_analytics, data_science]
+    career_tags: [business_analyst, data_analyst]
+    duration_months: 12
+    tuition_total: 16000
+    currency: CAD
+    typical_admit_gpa_percent: 58
+    post_study_work_months: 12
+    intakes:
+      - {term: jan, year: 2027, application_deadline: 2026-10-01, status: closed}
+      - {term: sep, year: 2027, application_deadline: 2027-06-01, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 50}
+      - {type: min_ielts_overall, value: 6.5}
+
+  # ---------------- Germany ----------------
+  - id: de_tum_msc_dea
+    university_id: de_tum
+    name: MSc Data Engineering and Analytics
+    degree_level: masters
+    field_tags: [data_science, computer_science, ml]
+    career_tags: [data_scientist, ml_engineer, software_engineer]
+    duration_months: 24
+    tuition_total: 24000
+    currency: EUR
+    typical_admit_gpa_percent: 85
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-05-31, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 75}
+      - {type: accepts_3yr_degree, value: false, note: Requires 16 years of education}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: [computer_science, mathematics, information_technology]}
+
+  - id: de_rwth_msc_cs
+    university_id: de_rwth
+    name: MSc Computer Science
+    degree_level: masters
+    field_tags: [computer_science, software, ml]
+    career_tags: [software_engineer, ml_engineer]
+    duration_months: 24
+    tuition_total: 1300
+    currency: EUR
+    typical_admit_gpa_percent: 82
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-03-01, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 70}
+      - {type: accepts_3yr_degree, value: false, note: Requires 16 years of education}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: [computer_science, information_technology]}
+
+  - id: de_rwth_msc_robotics
+    university_id: de_rwth
+    name: MSc Robotic Systems Engineering
+    degree_level: masters
+    field_tags: [robotics, mechanical, electrical]
+    career_tags: [robotics_engineer, mechanical_engineer]
+    duration_months: 24
+    tuition_total: 1300
+    currency: EUR
+    typical_admit_gpa_percent: 80
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-03-01, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 70}
+      - {type: accepts_3yr_degree, value: false}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: [mechanical, electrical, electronics, engineering]}
+
+  - id: de_dortmund_msc_ds
+    university_id: de_dortmund
+    name: MSc Data Science
+    degree_level: masters
+    field_tags: [data_science, statistics, ml]
+    career_tags: [data_scientist, data_analyst]
+    duration_months: 24
+    tuition_total: 1300
+    currency: EUR
+    typical_admit_gpa_percent: 70
+    intakes: [{term: sep, year: 2027, application_deadline: 2027-07-15, status: open}]
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 60}
+      - {type: accepts_3yr_degree, value: false}
+      - {type: min_ielts_overall, value: 6.5}
+      - {type: required_background, value: *cs_bg}
+
+  - id: de_srh_msc_bdai
+    university_id: de_srh
+    name: MSc Big Data and Artificial Intelligence
+    degree_level: masters
+    field_tags: [data_science, ml]
+    career_tags: [data_scientist, ml_engineer, data_analyst]
+    duration_months: 18
+    tuition_total: 15000
+    currency: EUR
+    typical_admit_gpa_percent: 60
+    intakes:
+      - {term: may, year: 2027, application_deadline: 2027-02-15, status: open}
+      - {term: sep, year: 2027, application_deadline: 2027-07-15, status: open}
+    eligibility_rules:
+      - {type: min_gpa_percent, value: 55}
+      - {type: min_ielts_overall, value: 6.0}

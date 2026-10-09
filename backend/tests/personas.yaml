@@ -1,0 +1,142 @@
+# Calibration personas.
+#
+# Each persona is a realistic student plus the outcomes an experienced counsellor would expect.
+# These were written from the design intent as a starting set. Replace or extend them with
+# shortlists labelled by real counsellors, then tune config/presets.yaml until agreement is high.
+#
+# Expectation keys:
+#   top_n_includes:          {n, ids}       every id must appear in the top n
+#   top_n_country_includes:  {n, country}   at least one course from the country in the top n
+#   set_aside:               {id: gate}     course must be set aside by that gate
+#   not_ranked:              [ids]          course must not appear in the ranked list
+#   max_confidence:          float          profile confidence must be at most this
+
+as_of: 2026-10-09
+
+personas:
+  - name: Strong CS student, mid budget, Canada or Germany
+    preset: balanced
+    profile:
+      gpa_percent: 82
+      degree_years: 4
+      ielts_overall: 7.0
+      ielts_min_band: 6.5
+      backlogs: 0
+      background_tags: [computer_science, engineering]
+      interest_tags: [data_science, ml]
+      career_tags: [ml_engineer]
+      budget_inr: 4000000
+      target_countries: [canada, germany]
+      target_intake: {term: sep, year: 2027}
+      target_levels: [masters]
+    expect:
+      top_n_includes: {n: 3, ids: [de_rwth_msc_cs]}
+      set_aside: {ca_toronto_mscac: budget, ca_conestoga_gc_aiml: level}
+
+  - name: Top student, high budget, wants a big name
+    preset: prestige_first
+    profile:
+      gpa_percent: 91
+      degree_years: 4
+      ielts_overall: 7.5
+      ielts_min_band: 7.0
+      backlogs: 0
+      background_tags: [computer_science]
+      interest_tags: [ml, data_science]
+      career_tags: [ml_engineer]
+      budget_inr: 8000000
+      target_countries: [uk, canada]
+      target_levels: [masters]
+    expect:
+      top_n_includes: {n: 5, ids: [ca_toronto_mscac, uk_ucl_msc_dsml]}
+
+  - name: Three year statistics degree, wants data analytics
+    preset: balanced
+    profile:
+      gpa_percent: 70
+      degree_years: 3
+      ielts_overall: 7.0
+      ielts_min_band: 6.5
+      backlogs: 0
+      background_tags: [statistics, mathematics]
+      interest_tags: [data_science, statistics]
+      career_tags: [data_analyst]
+      budget_inr: 6000000
+    expect:
+      top_n_includes: {n: 5, ids: [uk_leeds_msc_ds]}
+      set_aside: {de_dortmund_msc_ds: eligibility, de_tum_msc_dea: eligibility}
+
+  - name: Commerce graduate, tight budget, January intake
+    preset: budget_first
+    profile:
+      gpa_percent: 65
+      degree_years: 3
+      ielts_overall: 6.5
+      ielts_min_band: 6.0
+      backlogs: 1
+      background_tags: [commerce]
+      interest_tags: [business_analytics]
+      career_tags: [business_analyst]
+      budget_inr: 2500000
+      target_intake: {term: jan, year: 2027}
+      target_levels: [masters, pg_diploma]
+    expect:
+      set_aside: {ca_humber_gc_bia: intake, uk_herts_msc_ba: budget}
+      not_ranked: [uk_ucl_msc_dsml]
+
+  - name: Mechanical engineer interested in robotics
+    preset: balanced
+    profile:
+      gpa_percent: 76
+      degree_years: 4
+      ielts_overall: 7.0
+      ielts_min_band: 6.5
+      backlogs: 0
+      background_tags: [mechanical, engineering]
+      interest_tags: [robotics]
+      career_tags: [robotics_engineer]
+      budget_inr: 3500000
+      target_countries: [germany, uk]
+    expect:
+      top_n_includes: {n: 1, ids: [de_rwth_msc_robotics]}
+      set_aside: {uk_manchester_msc_robotics: budget}
+
+  - name: Good grades but IELTS 6.0
+    preset: balanced
+    profile:
+      gpa_percent: 75
+      degree_years: 4
+      ielts_overall: 6.0
+      ielts_min_band: 5.5
+      backlogs: 0
+      background_tags: [computer_science]
+      interest_tags: [data_science, ml]
+      career_tags: [data_scientist]
+      budget_inr: 6000000
+    expect:
+      top_n_includes: {n: 1, ids: [de_srh_msc_bdai]}
+      set_aside: {uk_manchester_msc_acs: eligibility, ca_ubc_mds: eligibility}
+
+  - name: Wants to work abroad after study
+    preset: work_rights_first
+    profile:
+      gpa_percent: 78
+      degree_years: 4
+      ielts_overall: 7.0
+      ielts_min_band: 6.5
+      backlogs: 0
+      background_tags: [computer_science, engineering]
+      interest_tags: [data_science, software]
+      career_tags: [data_scientist, software_engineer]
+      budget_inr: 7000000
+      target_levels: [masters]
+    expect:
+      top_n_country_includes: {n: 3, country: canada}
+
+  - name: First minutes of a session, almost nothing known
+    preset: balanced
+    profile:
+      interest_tags: [data_science]
+    expect:
+      max_confidence: 0.5
+      not_ranked: []

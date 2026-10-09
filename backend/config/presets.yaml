@@ -1,0 +1,30 @@
+# Priority presets. The counsellor picks one per session; every result records the preset and
+# config version that produced it. Weights are normalised at load time, so each row only needs to
+# express relative importance. Tune these against the calibration personas (python -m app.calibrate).
+
+version: v2.0
+
+constants:
+  neutral_subscore: 0.6     # value used when the field behind a sub score is unknown
+  subscore_floor: 0.05      # keeps the geometric mean defined and ordered
+  stability_nudge: 0.05     # weight change used by the close call check
+  bands:
+    strong: 75
+    good: 55
+
+presets:
+  balanced:
+    label: Balanced
+    weights: {field_fit: 0.24, career_fit: 0.18, budget_fit: 0.18, academic_fit: 0.15, preference_fit: 0.12, outcome_fit: 0.07, reputation_fit: 0.06}
+  budget_first:
+    label: Budget first
+    weights: {field_fit: 0.20, career_fit: 0.12, budget_fit: 0.35, academic_fit: 0.13, preference_fit: 0.10, outcome_fit: 0.06, reputation_fit: 0.04}
+  career_first:
+    label: Career outcome first
+    weights: {field_fit: 0.22, career_fit: 0.30, budget_fit: 0.14, academic_fit: 0.12, preference_fit: 0.08, outcome_fit: 0.10, reputation_fit: 0.04}
+  work_rights_first:
+    label: Work rights first
+    weights: {field_fit: 0.18, career_fit: 0.16, budget_fit: 0.14, academic_fit: 0.12, preference_fit: 0.08, outcome_fit: 0.28, reputation_fit: 0.04}
+  prestige_first:
+    label: Prestige first
+    weights: {field_fit: 0.20, career_fit: 0.14, budget_fit: 0.12, academic_fit: 0.14, preference_fit: 0.08, outcome_fit: 0.06, reputation_fit: 0.26}

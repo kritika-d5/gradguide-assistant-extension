@@ -1,0 +1,46 @@
+# Reference data: universities, countries and exchange rates.
+#
+# ILLUSTRATIVE VALUES. Names are real institutions, but fees, living costs, rankings, deadlines and
+# work rights are approximations for a demo and must be verified against official sources before
+# real counselling use. Visa and post study work rules in particular change often.
+
+fx_to_inr:   # fixed demo rates so results are reproducible; update in one place
+  INR: 1
+  GBP: 115
+  CAD: 62
+  EUR: 100
+
+countries:
+  uk:
+    currency: GBP
+    living_cost_monthly: 1300
+    post_study_work_months: 18
+    part_time_work_hours_cap: 20
+  canada:
+    currency: CAD
+    living_cost_monthly: 1700
+    post_study_work_months: 36
+    part_time_work_hours_cap: 24
+  germany:
+    currency: EUR
+    living_cost_monthly: 1000
+    post_study_work_months: 18
+    part_time_work_hours_cap: 20
+
+universities:
+  - {id: uk_ucl,          name: University College London,           country: uk,      city: London,     ranking_band: top100}
+  - {id: uk_manchester,   name: University of Manchester,            country: uk,      city: Manchester, ranking_band: top100}
+  - {id: uk_leeds,        name: University of Leeds,                 country: uk,      city: Leeds,      ranking_band: top100}
+  - {id: uk_glasgow,      name: University of Glasgow,               country: uk,      city: Glasgow,    ranking_band: top100}
+  - {id: uk_coventry,     name: Coventry University,                 country: uk,      city: Coventry,   ranking_band: other}
+  - {id: uk_herts,        name: University of Hertfordshire,         country: uk,      city: Hatfield,   ranking_band: other}
+  - {id: ca_toronto,      name: University of Toronto,               country: canada,  city: Toronto,    ranking_band: top100}
+  - {id: ca_ubc,          name: University of British Columbia,      country: canada,  city: Vancouver,  ranking_band: top100}
+  - {id: ca_waterloo,     name: University of Waterloo,              country: canada,  city: Waterloo,   ranking_band: top300}
+  - {id: ca_concordia,    name: Concordia University,                country: canada,  city: Montreal,   ranking_band: other}
+  - {id: ca_conestoga,    name: Conestoga College,                   country: canada,  city: Kitchener,  ranking_band: other}
+  - {id: ca_humber,       name: Humber Polytechnic,                  country: canada,  city: Toronto,    ranking_band: other}
+  - {id: de_tum,          name: Technical University of Munich,      country: germany, city: Munich,     ranking_band: top100}
+  - {id: de_rwth,         name: RWTH Aachen University,              country: germany, city: Aachen,     ranking_band: top300}
+  - {id: de_dortmund,     name: TU Dortmund University,              country: germany, city: Dortmund,   ranking_band: other}
+  - {id: de_srh,          name: SRH University Berlin,               country: germany, city: Berlin,     ranking_band: other}
