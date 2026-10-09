@@ -11,7 +11,6 @@ counsellor's confirmation, and every recommendation carries its reason.
 > 🎥 **Video walkthrough:** _link to be added_
 > <!-- Replace with the walkthrough link, e.g. [Watch the walkthrough](https://...) -->
 
-Brief: [docs/assignment.md](docs/assignment.md).
 
 ---
 
